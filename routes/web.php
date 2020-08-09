@@ -22,6 +22,13 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
         $router->put('/{id}', 'UserController@updateUser');
         $router->delete('/{id}', 'UserController@deleteUser');
     });
+
+    $router->group(['prefix' => 'user-balance'], function () use ($router){
+        $router->get('/','UserBalanceController@getAllBalance');
+        $router->get('/{id}','UserBalanceController@getBalanceById');
+        $router->post('/','UserBalanceController@createBalance');
+        $router->delete('/{id}','UserBalanceController@deleteBalance');
+    });
 });
 
 $router->get('/key', function() {
