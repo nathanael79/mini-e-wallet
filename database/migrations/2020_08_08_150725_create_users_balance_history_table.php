@@ -16,15 +16,15 @@ class CreateUsersBalanceHistoryTable extends Migration
         Schema::create('users_balance_history', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_balance_id');
-            $table->foreign('user_balance_id')->references('id')->on('users_balance');
+            $table->foreign('user_balance_id')->references('id')->on('users_balance')->onDelete('cascade');
             $table->integer('balance_before');
             $table->integer('balance_after');
             $table->string('activity');
-            $table->enum('type',['credit, debit']);
-            $table->string('ip');
-            $table->string('location');
-            $table->string('user_agent');
-            $table->string('author');
+            $table->enum('type',['credit','debit']);
+            $table->string('ip')->nullable();
+            $table->string('location')->nullable();
+            $table->string('user_agent')->nullable();
+            $table->string('author')->nullable();
             $table->timestamps();
         });
     }
