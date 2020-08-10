@@ -1,0 +1,458 @@
+{
+	"info": {
+		"_postman_id": "f11b855d-07f4-43fd-8693-640c4dc9caea",
+		"name": "mini e-wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET USERS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/users",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "nuel",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "nuel@nuel.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "nuel123",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://privy.dev/api/v1/users",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USERS BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/users/3",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USERS WITH BALANCE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/users/with-balance",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"with-balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER BY ID WITH BALANCE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/users/with-balance/1",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"with-balance",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE USER",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "nuel",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "imanuel@ronaldo123.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "imanuel123",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://privy.dev/api/v1/users/2",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/users/2",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE USER BALANCE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "balance",
+							"value": "50000",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "debit",
+							"type": "text"
+						},
+						{
+							"key": "user_agent",
+							"value": "E-wallet Debit",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://privy.dev/api/v1/user-balance",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user-balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER BALANCE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/user-balance/3",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user-balance",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE BANK BALANCE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/bank-balance/5",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"bank-balance",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL BALANCE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/user-balance",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user-balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BALANCE BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/user-balance/12",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user-balance",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL BANK BALANCE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://privy.dev/api/v1/bank-balance",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"bank-balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE BANK BALANCE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "0891366165",
+							"type": "text"
+						},
+						{
+							"key": "balance",
+							"value": "25000",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "debit",
+							"type": "text"
+						},
+						{
+							"key": "user_agent",
+							"value": "Bank Debit",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://privy.dev/api/v1/bank-balance",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"bank-balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TOP UP USER BALANCE FROM BANK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "0891366165",
+							"type": "text"
+						},
+						{
+							"key": "balance",
+							"value": "250000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://privy.dev/api/v1/user-balance/transfer",
+					"protocol": "https",
+					"host": [
+						"privy",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user-balance",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
