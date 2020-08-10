@@ -22,7 +22,7 @@ class BlanceBank extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function blanceBankHistory(){
-        return $this->hasMany(BlanceBankHistory::class);
+        return $this->hasMany(BlanceBankHistory::class,'balance_bank_id','id');
     }
 
 }

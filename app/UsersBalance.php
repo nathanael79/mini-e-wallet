@@ -25,11 +25,12 @@ class UsersBalance extends Model
         return $this->hasOne(User::class);
     }
 
+
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function usersBalanceHistory(){
-        return $this->hasMany(UsersBalanceHistory::class);
+        return $this->hasOne(UsersBalanceHistory::class, 'user_balance_id','id');
     }
 
 }

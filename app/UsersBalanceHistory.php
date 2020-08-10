@@ -11,12 +11,18 @@ class UsersBalanceHistory extends Model
     /**
      * @var string
      */
-    protected $table = 'users_balance_histoy';
+    protected $table = 'users_balance_history';
 
     /**
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = [
+        'user_balance_id',
+        'balance_before',
+        'balance_after',
+        'activity',
+        'type'
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
