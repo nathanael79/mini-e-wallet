@@ -1,24 +1,68 @@
+# Mini E-Wallet
+Dibuat menggunakan lumen untuk test privy.id
+
+### System requirements
+- PHP >= 7.2
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Mbstring PHP Extension
+
+### Tata Cara Instalasi
+  - Clone project ini dengan git clone
+  - Lakukan pemasangan asset menggunakan `composer install` didalam hasil clone project
+  - Jangan lupa untuk lakukan pengisian pada .env sesuai dengan environment mysql yang ada seperti host, dbname, user, port dan password
+  - Gunakan perintah `php artisan migrate --seed` untuk melakukan migrasi database dan pengisian data user
+  - Gunakan `php -S localhost:8000 -t public` untuk menyalakan aplikasi
+  - Akses `localhost:8000/key` untuk mendapatkan key, copy paste key yang tergenerate dan tempelkan pada .env pada bagian `APP_KEY`
+  
+### Dokumentasi API
+
+ - Login user (localhost:8000/api/v1/login)
+   
+   | Parameter | Type | Required | Value
+   | ------ | ------ | ------ | ------ |
+   | email | string | Yes | admin@admin.com |
+   | password | string | Yes | admin123 |
+   
+   setelah login, anda akan mendapatkan akses token, gunakan akses token tersebut pada seluruh header api yang ada dengan:
+   `key: Authorization` dan `bearer {token}`
+   
+ - Create User Balance (localhost:8000/api/v1/user-balance)
+   
+   | Parameter | Type | Required | Value
+   | ------ | ------ | ------ | ------ |
+   | user_id | int | Yes | ------ |
+   | balance | int | Yes | ------ |
+   | type | string | Yes | credit or debit |
+   
+ - Create Bank Balance (localhost:8000/api/v1/bank-balance)
+ 
+    | Parameter | Type | Required | Value
+    | ------ | ------ | ------ | ------ |
+    | code | int | Yes | nomor rekening |
+    | balance | int | Yes | ------ |
+    | type | string | Yes | credit or debit |
+    | user_agent | string | Yes | Bank Debit |
+    
+ - Transfer to Bank (localhost:8000/api/v1/transfer)
+     
+    | Parameter | Type | Required | Value
+    | ------ | ------ | ------ | ------ |
+    | user_id | int | Yes | ------ |
+    | code | int | Yes | nomor rekening |
+    | balance | int | Yes | ------ |
+
+ - Top up from Bank (localhost:8000/api/v1/retrieve)
+     
+    | Parameter | Type | Required | Value
+    | ------ | ------ | ------ | ------ |
+    | user_id | int | Yes | ------ |
+    | code | int | Yes | nomor rekening |
+    | balance | int | Yes | ------ |
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
 [![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
 [![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
-
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
