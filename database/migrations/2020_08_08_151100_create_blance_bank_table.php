@@ -17,8 +17,8 @@ class CreateBlanceBankTable extends Migration
             $table->id();
             $table->integer('balance');
             $table->integer('balance_achieve');
-            $table->string('code');
-            $table->boolean('enable');
+            $table->string('code')->nullable();
+            $table->boolean('enable')->nullable();
             $table->timestamps();
         });
     }
